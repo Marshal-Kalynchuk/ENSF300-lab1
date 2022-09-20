@@ -7,7 +7,7 @@ def myAdd(a, b):
 def mySub(a, b):
     return a - b
 
-def validation(program_input, input_type): #this function needs two string inputsinputs
+def validation(program_input, input_type, input_position, previous_input): #this function needs two string inputsinputs
     input_valid = False #used in checking validity of input
     operators_list = ["*","/","-","+"] #lsits of valid responses
     digits_list = ["0","1","2","3","4","5","6","7","8","9"]
@@ -28,6 +28,17 @@ def validation(program_input, input_type): #this function needs two string input
                 else: #if not valid
                     input_valid = False #returns the validity statement to false in the case that input_valid became true
 
+        if input_position in [3,5]:
+            while program_input == "0":
+                if input_position == 3 and previous_input == "/" and program_input == "0":
+                    print("Your input is invalid. You cannot divide by zero.\n")
+                    program_input = input("Please enter a valid number: ") #requests an input
+                    input_valid = False
+                if input_position == 5 and previous_input == "/" and program_input == "0":
+                    print("Your input is invalid. You cannot divide by zero.\n")
+                    program_input = input("Please enter a valid number: ") #requests an input
+                    input_valid = False
+
         if input_valid == False and input_type == 0: #if the number is not valid the program asks for more input
             print("Your input is invalid. Please input a number.\n")
             program_input = input("Please enter a valid number: ") #requests an input
@@ -35,6 +46,7 @@ def validation(program_input, input_type): #this function needs two string input
             print("Your input is invalid. Please input an operator.\n")
             program_input = input("Please enter a valid operator: ") #requests an input       
 
+    print(input_valid)
     if input_valid == True and input_type == 0: #sets the program_input as an interger if its a digit
         program_input = int(program_input)
 
@@ -42,19 +54,19 @@ def validation(program_input, input_type): #this function needs two string input
     
 def main():
     first_number_input = str(input('Please enter the first number'))
-    first_number = validation(first_number_input,0)
+    first_number = validation(first_number_input,0,1,0)
 
     first_operator_input = str(input('Please enter the first operator'))
-    first_operator_input = validation(first_operator_input,1)
+    first_operator = validation(first_operator_input,1,2,first_number)
 
     second_number_input = str(input('Please enter the second number'))
-    second_number = validation(second_number_input,0)
+    second_number = validation(second_number_input,0,3, first_operator)
     
     second_operator_input = str(input('Please enter the second operator'))
-    second_operator_input = validation(second_operator_input,1)
+    second_operator = validation(second_operator_input,1,4,second_number)
 
     third_number_input = str(input('Please enter the third number'))
-    third_number = validation(third_number_input,0)
+    third_number = validation(third_number_input,0,5,second_operator)
 
 if __name__ == "__main__":
     main()
