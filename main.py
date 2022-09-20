@@ -1,7 +1,15 @@
 def main():
     print("Hello World!")
 
-
+def myMul(a, b):
+    return a * b
+def myDiv(a, b):
+    return a // b
+def myAdd(a, b):
+    return a +  b
+def mySub(a, b):
+    return a - b
+    
 def validation(program_input, input_type): #this function needs two string inputsinputs
     input_valid = False #used in checking validity of input
     operators_list = ["*","/","-","+"] #lsits of valid responses
