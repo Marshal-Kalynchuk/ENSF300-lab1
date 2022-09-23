@@ -90,19 +90,19 @@ def display(operations,operands,result):
     print(result)
 
 def main():
-    first_number_input = str(input('Please enter the first number'))
+    first_number_input = str(input('Please enter the first number: '))
     first_number = validation(first_number_input,0,1,0)
 
-    first_operator_input = str(input('Please enter the first operator'))
+    first_operator_input = str(input('Please enter the first operator: '))
     first_operator = validation(first_operator_input,1,2,first_number)
 
-    second_number_input = str(input('Please enter the second number'))
+    second_number_input = str(input('Please enter the second number: '))
     second_number = validation(second_number_input,0,3, first_operator)
     
-    second_operator_input = str(input('Please enter the second operator'))
+    second_operator_input = str(input('Please enter the second operator: '))
     second_operator = validation(second_operator_input,1,4,second_number)
 
-    third_number_input = str(input('Please enter the third number'))
+    third_number_input = str(input('Please enter the third number: '))
     third_number = validation(third_number_input,0,5,second_operator)
 
 if __name__ == "__main__":
