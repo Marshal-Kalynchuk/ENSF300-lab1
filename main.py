@@ -72,10 +72,10 @@ def evaluate (operations,operands):
         result = result + myDiv(result,operands[2])
         
     if (operations[0] == "+"):
-        result = myAdd(operands[0],operands[1])
+        result = result + myAdd(operands[0],operands[1])
         
     elif (operations[0] == "-"):
-        result = mySub(operands[0],operands[1])
+        result = result + mySub(operands[0],operands[1])
         
     if (operations[1] == "+"):
         result = result + myAdd(result,operands[2])
