@@ -51,7 +51,44 @@ def validation(program_input, input_type, input_position, previous_input): #this
         program_input = int(program_input)
 
     return program_input #returns a valid value, it is a string if its an operator and a interger if it is a number.
-    
+
+def evaluate (operations,operands):
+    result = 0
+    if (operations[0] == "*"):
+        result = myMul(operands[0],operands[1])
+        return result
+    elif (operations[0] == "/"):
+        result = myDiv(operands[0],operands[1])
+        return result   
+    elif(operations[1] == "*"):
+        result = myMul(operands[1],operands[2])
+        return result
+    elif(operations[1] == "/"):
+        result = myDiv(operands[1],operands[2])
+        return result
+    if(operations[1] == "*"):
+        result = myMul(result,operands[2])
+        return result
+    elif(operations[1] == "/"):
+        result = myDiv(result,operands[2])
+        return result
+    if (operations[0] == "+"):
+        result = myAdd(operands[0],operands[1])
+        return result
+    elif (operations[0] == "-"):
+        result = mySub(operands[0],operands[1])
+        return result
+    if (operations[1] == "+"):
+        result = myAdd(result,operands[2])
+        return result
+    elif (operations[1] == "-"):
+        result = mySub(result,operands[2])
+        return result
+    return result
+def display(operations,operands,result):
+    print("{} {} {} {} {} = ".format(operands[0],operations[0],operands[1],operations[1],operands[2]))
+    print(result)
+
 def main():
     first_number_input = str(input('Please enter the first number'))
     first_number = validation(first_number_input,0,1,0)
