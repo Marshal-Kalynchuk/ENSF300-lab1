@@ -104,5 +104,7 @@ def main():
     third_number_input = str(input('Please enter the third number: '))
     third_number = validation(third_number_input,0,5,second_operator)
 
+    answer = evaluate()
+
 if __name__ == "__main__":
     main()
