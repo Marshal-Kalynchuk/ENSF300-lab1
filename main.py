@@ -46,7 +46,6 @@ def validation(program_input, input_type, input_position, previous_input): #this
             print("Your input is invalid. Please input an operator.\n")
             program_input = input("Please enter a valid operator: ") #requests an input       
 
-    print(input_valid)
     if input_valid == True and input_type == 0: #sets the program_input as an interger if its a digit
         program_input = int(program_input)
 
