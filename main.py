@@ -55,34 +55,34 @@ def evaluate (operations,operands):
     result = 0
     if (operations[0] == "*"):
         result = myMul(operands[0],operands[1])
-        return result
+        
     elif (operations[0] == "/"):
         result = myDiv(operands[0],operands[1])
-        return result   
+           
     elif(operations[1] == "*"):
         result = myMul(operands[1],operands[2])
-        return result
+        
     elif(operations[1] == "/"):
         result = myDiv(operands[1],operands[2])
-        return result
+        
     if(operations[1] == "*"):
-        result = myMul(result,operands[2])
-        return result
+        result = result + myMul(result,operands[2])
+        
     elif(operations[1] == "/"):
-        result = myDiv(result,operands[2])
-        return result
+        result = result + myDiv(result,operands[2])
+        
     if (operations[0] == "+"):
         result = myAdd(operands[0],operands[1])
-        return result
+        
     elif (operations[0] == "-"):
         result = mySub(operands[0],operands[1])
-        return result
+        
     if (operations[1] == "+"):
-        result = myAdd(result,operands[2])
-        return result
+        result = result + myAdd(result,operands[2])
+        
     elif (operations[1] == "-"):
-        result = mySub(result,operands[2])
-        return result
+        result = result + mySub(result,operands[2])
+    print(result)
     return result
 def display(operations,operands,result):
     print("{} {} {} {} {} = ".format(operands[0],operations[0],operands[1],operations[1],operands[2]))
@@ -103,6 +103,9 @@ def main():
 
     third_number_input = str(input('Please enter the third number: '))
     third_number = validation(third_number_input,0,5,second_operator)
+
+    
+    
 
 if __name__ == "__main__":
     main()
