@@ -89,9 +89,9 @@ def evaluate (operations,operands):
     elif (operations[1] == "-"):
         result = result + mySub(result,operands[2]) 
     return result
+
 def display(operations,operands,result):
-    print("{} {} {} {} {} = ".format(operands[0],operations[0],operands[1],operations[1],operands[2]))
-    print(result)
+    print("{} {} {} {} {} = {}".format(operands[0], operations[0], operands[1], operations[1], operands[2], result))
 
 def main():
     first_number_input = str(input('Please enter the first number: '))
@@ -108,9 +108,12 @@ def main():
 
     third_number_input = str(input('Please enter the third number: '))
     third_number = validation(third_number_input,0,5,second_operator)
+    operators = [first_operator, second_operator]
+    operands = [first_number, second_number, third_number]
+
+    answer = evaluate(operators, operands)
+    display(operators, operands, answer)
 
     
-    
-
 if __name__ == "__main__":
     main()
