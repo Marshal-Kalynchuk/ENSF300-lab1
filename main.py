@@ -1,10 +1,38 @@
 def myMul(a, b):
+    """
+    This funtion multiplies two numbers (a and b) that are given in the parameter
+    parameter a: First number
+    parameter b: Second number 
+    return multiplication operation result
+
+    """ 
     return a * b
 def myDiv(a, b):
+    """
+    This funtion divides a number by b number, both of these numbers are giving in the parameter
+    parameter a: First number
+    parameter b: Second number 
+    return division operation result
+
+    """ 
     return a // b
 def myAdd(a, b):
-    return a +  b
+    """
+    This funtion adds two numbers a and b that are giving in the parameter
+    parameter a: First number
+    parameter b: Second number 
+    return addition operation result
+
+    """ 
+    return a + b
 def mySub(a, b):
+    """
+    This funtion substracts b number from a number which are giving in the parameter
+    parameter a: First number
+    parameter b: Second number 
+    return substraction operation result
+
+    """ 
     return a - b
 
 def validation(program_input, input_type, input_position, previous_input): #this function needs four inputs
@@ -56,7 +84,7 @@ def validation(program_input, input_type, input_position, previous_input): #this
     return program_input #returns a valid value, it is a string if its an operator and a interger if it is a number.
 
 def evaluate (operations,operands):
-    
+    result = 0
     if (operations[0] == "*"):
         result = myMul(operands[0],operands[1])
         if(operations[1] == "*"):
@@ -78,7 +106,7 @@ def evaluate (operations,operands):
             result = myDiv(operands[1],operands[2])
             result = myAdd(operands[0],result)    
         else:
-            result = result + myAdd(operands[0],operands[1])
+            result = myAdd(operands[0],operands[1])
     elif (operations[0] == "-"):
         if(operations[1] == "*"):
             result = myMul(operands[1],operands[2])
@@ -87,11 +115,11 @@ def evaluate (operations,operands):
             result = myDiv(operands[1],operands[2])
             result = mySub(operands[0],result)
         else:
-            result = result + mySub(operands[0],operands[1])
+            result = mySub(operands[0],operands[1])
     if (operations[1] == "+"):
-        result = result + myAdd(result,operands[2])  
+        result = myAdd(result,operands[2])  
     elif (operations[1] == "-"):
-        result = result + mySub(result,operands[2]) 
+        result = mySub(result,operands[2]) 
     return result
 
 def display(operations,operands,result):
