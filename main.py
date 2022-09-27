@@ -7,7 +7,13 @@ def myAdd(a, b):
 def mySub(a, b):
     return a - b
 
-def validation(program_input, input_type, input_position, previous_input): #this function needs two string inputsinputs
+def validation(program_input, input_type, input_position, previous_input): #this function needs four inputs
+    #program_input is a string parameter of the user input
+    #input_type is a interger that determines if the input is supposed to be a number or a operator
+    #input_position is a interger thqt represents the position of the input in the equation
+    #previous_input is the verfifed input of the previous position in the equation
+    #this function returns a string if the input is in the operator position or a interger if the input is in the number position 
+
     input_valid = False #used in checking validity of input
     operators_list = ["*","/","-","+"] #lsits of valid responses
     digits_list = ["0","1","2","3","4","5","6","7","8","9"]
