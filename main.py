@@ -37,21 +37,21 @@ def validation(program_input, input_type, input_position, previous_input): #this
         if input_position in [3,5]:
             while program_input == "0":
                 if input_position == 3 and previous_input == "/" and program_input == "0" and input_valid == True:
-                    print("Your input is invalid. You cannot divide by zero.\n")
+                    print("\nYour input is invalid. You cannot divide by zero.")
                     program_input = input("Please enter a valid number: ") #requests an input
                     input_valid = False
                 if input_position == 5 and previous_input == "/" and program_input == "0" and input_valid == True:
-                    print("Your input is invalid. You cannot divide by zero.\n")
+                    print("\nYour input is invalid. You cannot divide by zero.")
                     program_input = input("Please enter a valid number: ") #requests an input
                     input_valid = False
                 else:
                     break
 
         if input_valid == False and input_type == 0: #if the number is not valid the program asks for more input
-            print("Your input is invalid. Please input a number.\n")
+            print("\nYour input is invalid. Please input a number.")
             program_input = input("Please enter a valid number: ") #requests an input
         if input_valid == False and input_type ==1: #if the operator is not valid the program asks for more input
-            print("Your input is invalid. Please input an operator.\n")
+            print("\nYour input is invalid. Please input an operator.")
             program_input = input("Please enter a valid operator: ") #requests an input       
 
     if input_valid == True and input_type == 0: #sets the program_input as an interger if its a digit
