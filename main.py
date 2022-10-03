@@ -1,10 +1,38 @@
 def myMul(a, b):
+    """
+    This funtion multiplies two numbers (a and b) that are given in the parameter
+    parameter a: First number
+    parameter b: Second number 
+    return multiplication operation result
+
+    """ 
     return a * b
 def myDiv(a, b):
+    """
+    This funtion divides a number by b number, both of these numbers are giving in the parameter
+    parameter a: First number
+    parameter b: Second number 
+    return division operation result
+
+    """ 
     return a // b
 def myAdd(a, b):
-    return a +  b
+    """
+    This funtion adds two numbers a and b that are giving in the parameter
+    parameter a: First number
+    parameter b: Second number 
+    return addition operation result
+
+    """ 
+    return a + b
 def mySub(a, b):
+    """
+    This funtion substracts b number from a number which are giving in the parameter
+    parameter a: First number
+    parameter b: Second number 
+    return substraction operation result
+
+    """ 
     return a - b
 
 def validation(program_input, input_type, input_position, previous_input): #this function needs four inputs
