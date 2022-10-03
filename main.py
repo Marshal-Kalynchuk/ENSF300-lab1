@@ -64,11 +64,11 @@ def validation(program_input, input_type, input_position, previous_input):
                     input_valid = False #returns the validity statement to false in the case that input_valid became true
 
         if input_position in [3,5]:
-            if input_position == 3 and previous_input == "/" and program_input == "0" and input_valid == True:
+            if input_position == 3 and previous_input == "/" and program_input == "0" and input_valid == True: #checks if previous input is a division
                 print("\nYour input is invalid. You cannot divide by zero.")
                 program_input = str(input("Please enter a valid number: ")) #requests an input
                 input_valid = False
-            if input_position == 5 and previous_input == "/" and program_input == "0" and input_valid == True:
+            if input_position == 5 and previous_input == "/" and program_input == "0" and input_valid == True:#checks if previous input is a division
                 print("\nYour input is invalid. You cannot divide by zero.")
                 program_input = str(input("Please enter a valid number: ")) #requests an input
                 input_valid = False
@@ -79,10 +79,10 @@ def validation(program_input, input_type, input_position, previous_input):
             print("\nYour input is invalid. Please input an operator.")
             program_input = input("Please enter a valid operator: ") #requests an input       
 
-    if input_valid == True and input_type == 0: #sets the program_input as an interger if its a digit
-        program_input = int(program_input)
+    if input_valid == True and input_type == 0: #sets the program_input as an integer if its a digit
+        program_input = int(program_input) 
 
-    return program_input #returns a valid value, it is a string if its an operator and a interger if it is a number.
+    return program_input #returns a valid value, it is a string if its an operator and a integer if it is a number.
 
 def evaluate (operations,operands):
     result = 0
