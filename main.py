@@ -102,8 +102,9 @@ def display(operations,operands,result):
     print("{} {} {} {} {} = {}".format(operands[0], operations[0], operands[1], operations[1], operands[2], result))
 
 def main():
-    first_number_input = str(input('Please enter the first number: '))          #Takes in the input from The User
-    first_number = validation(first_number_input,0,1,0)                         #Uses the Validation Function to Validates the inputs
+    print("Welcome to the simple calculator. Please enter three digits and two operators into the calculator:")
+    first_number_input = str(input('Please enter the first number: '))
+    first_number = validation(first_number_input,0,1,0)
 
     first_operator_input = str(input('Please enter the first operator: '))      #Takes in the input from The User
     first_operator = validation(first_operator_input,1,2,first_number)          #Uses the Validation Function to Validates the inputs   
